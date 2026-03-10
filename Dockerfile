@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk:17
+FROM azul/zulu-openjdk:21
 
 LABEL maintainers = "strizhhh@mail.ru, nixel2007@gmail.com"
 
@@ -17,13 +17,13 @@ RUN apt-get update \
         /var/cache/debconf
 
 ENV TZ=Europe/Moscow \
-    SONAR_SCANNER_VERSION="7.0.2.4839" \
+    SONAR_SCANNER_VERSION="8.0.1.4006" \
     SONAR_SCANNER_HOME=/usr/lib/sonar-scanner
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /usr/src
 
-RUN curl --insecure -o ./sonarscanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip && \
+RUN curl -o ./sonarscanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip && \
 	unzip sonarscanner.zip && \
 	rm sonarscanner.zip && \
 	mv sonar-scanner-${SONAR_SCANNER_VERSION} /usr/lib/sonar-scanner && \

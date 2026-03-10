@@ -8,7 +8,11 @@ Sonar Scanner для GitLab CI/CD и Jenkins.
 
 ## TAGS AND RESPECTIVE DOCKERFILE LINKS
 
-* [4.6.2.2472, latest](https://github.com/astrizhachuk/sonar-scanner-cli/blob/master/Dockerfile)
+* [8.0.1.4006, latest](https://github.com/astrizhachuk/sonar-scanner-cli/blob/master/Dockerfile)
+
+* [7.0.2.4839](https://github.com/astrizhachuk/sonar-scanner-cli/blob/7.0.2.4839/Dockerfile)
+
+* [4.6.2.2472](https://github.com/astrizhachuk/sonar-scanner-cli/blob/4.6.2.2472/Dockerfile)
 
 * [4.3.0.2102](https://github.com/astrizhachuk/sonar-scanner-cli/blob/4.3.0.2102/Dockerfile)
 
@@ -18,7 +22,7 @@ Sonar Scanner для GitLab CI/CD и Jenkins.
 
 ### FROM
 
-* adoptopenjdk:16-hotspot
+* azul/zulu-openjdk:21
 
 ### ADD
 
@@ -30,7 +34,7 @@ Sonar Scanner для GitLab CI/CD и Jenkins.
 
 ### ENV
 
-* SONAR_SCANNER_VERSION="4.6.2.2472" - version of Sonar Scanner
+* SONAR_SCANNER_VERSION="8.0.1.4006" - version of Sonar Scanner
 
 ## EXAMPLE .gitlab-ci.yml
 
@@ -56,7 +60,7 @@ merge_request:
     - sonar-scanner
       -D"sonar.host.url=${SONAR_SERVER}"
       -D"sonar.projectVersion=${PROJECT_VERSION}"
-      -D"sonar.login=${SONAR_LOGIN}"
+      -D"sonar.token=${SONAR_TOKEN}"
       -D"sonar.pullrequest.key=${CI_MERGE_REQUEST_IID}"
       -D"sonar.pullrequest.branch=${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}"
       -D"sonar.pullrequest.base=${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}"
@@ -80,7 +84,7 @@ push:
       -D"sonar.host.url=${SONAR_SERVER}"
       -D"sonar.projectVersion=${PROJECT_VERSION}"
       -D"sonar.branch.name=master"
-      -D"sonar.login=${SONAR_LOGIN}"
+      -D"sonar.token=${SONAR_TOKEN}"
   rules:
     - if: '$CI_COMMIT_TAG != null'
   tags:
