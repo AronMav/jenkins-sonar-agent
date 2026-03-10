@@ -8,7 +8,7 @@ Sonar Scanner для GitLab CI/CD и Jenkins.
 
 ## TAGS AND RESPECTIVE DOCKERFILE LINKS
 
-* [8.0.1.4006, latest](https://github.com/astrizhachuk/sonar-scanner-cli/blob/master/Dockerfile)
+* [8.0.1.6346, latest](https://github.com/astrizhachuk/sonar-scanner-cli/blob/master/Dockerfile)
 
 * [7.0.2.4839](https://github.com/astrizhachuk/sonar-scanner-cli/blob/7.0.2.4839/Dockerfile)
 
@@ -34,7 +34,7 @@ Sonar Scanner для GitLab CI/CD и Jenkins.
 
 ### ENV
 
-* SONAR_SCANNER_VERSION="8.0.1.4006" - version of Sonar Scanner
+* SONAR_SCANNER_VERSION="8.0.1.6346" - version of Sonar Scanner
 
 ## EXAMPLE .gitlab-ci.yml
 

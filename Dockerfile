@@ -17,7 +17,7 @@ RUN apt-get update \
         /var/cache/debconf
 
 ENV TZ=Europe/Moscow \
-    SONAR_SCANNER_VERSION="8.0.1.4006" \
+    SONAR_SCANNER_VERSION="8.0.1.6346" \
     SONAR_SCANNER_HOME=/usr/lib/sonar-scanner
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
