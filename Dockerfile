@@ -1,6 +1,6 @@
 FROM azul/zulu-openjdk:21
 
-LABEL maintainers = "strizhhh@mail.ru, nixel2007@gmail.com"
+LABEL maintainers="strizhhh@mail.ru, nixel2007@gmail.com"
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
