@@ -162,6 +162,10 @@ push:
 docker build -t jenkins-sonar-agent:latest .
 ```
 
+## Благодарности
+
+Проект основан на [sonar-scanner-cli](https://github.com/astrizhachuk/sonar-scanner-cli) от [Alexander Strizhachuk](https://github.com/astrizhachuk).
+
 ## Лицензия
 
 MIT
