@@ -11,7 +11,6 @@ stages:
 variables:
   CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
-  #CI_DEBUG_TRACE: "true"
 
 .common_rules_onTag: &common_rules_onTag
   rules:
@@ -28,7 +27,7 @@ run:
   stage: test
   script:
     - docker pull $CONTAINER_TEST_IMAGE
-    - docker run $CONTAINER_TEST_IMAGE sonar-scanner --version
+    - docker run --entrypoint sonar-scanner $CONTAINER_TEST_IMAGE --version
   <<: *common_rules_onTag
 
 push:
