@@ -57,7 +57,7 @@ jenkins:
         name: "swarm"
         templates:
           - name: "sonar"
-            image: "192.168.48.6:5000/jenkins-sonar-agent:latest"
+            image: "your-registry/jenkins-sonar-agent:latest"
             label: "sonar"
             workingDir: "/var/jenkins_home"
             numExecutors: 1
