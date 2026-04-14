@@ -1,4 +1,4 @@
-# Sonar Scanner CLI
+# Jenkins Sonar Agent
 
 Docker-образ для статического анализа кода с помощью [SonarQube Scanner](https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner/).
 
